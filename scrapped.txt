@@ -1,0 +1,141 @@
+Mostly scrapped stuff
+
+<Window x:Class="Pokpok.wildBattleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pokpok"
+        mc:Ignorable="d"
+        Title="Wild Encounter" Height="648.154" Width="1400">
+    <Grid>
+        <GroupBox x:Name="BattleOptionsBox" Header="" HorizontalAlignment="Left" Height="151" Margin="1082,273,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF009700" Foreground="#FFFFBBBB" Background="#FF009700">
+            <Grid>
+                <Button x:Name="FightButton" Content="Fight" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="36"/>
+                <Button x:Name="BagButton" Content="Bag" HorizontalAlignment="Left" Margin="0,62,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="32"></Button>
+                <Button x:Name="PokemonButton" Content="Pokemon" HorizontalAlignment="Left" Margin="148,2,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="32"></Button>
+                <Button Name="RunButton" Content="Run" HorizontalAlignment="Left" Margin="148,62,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="32"></Button>
+            </Grid>
+        </GroupBox>
+        <Image Name="TrainerImage1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage2" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage3" HorizontalAlignment="Left" Margin="300,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage4" HorizontalAlignment="Left" Margin="445,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage5" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage6" HorizontalAlignment="Left" Margin="155,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage7" HorizontalAlignment="Left" Margin="300,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage8" HorizontalAlignment="Left" Margin="445,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+
+        <Image Name="OppImageS" HorizontalAlignment="Left" Margin="1222,0,0,0" VerticalAlignment="Top" Height="170" Width="170"/>
+        <Image Name="OppImageM" HorizontalAlignment="Left" Margin="1139,0,0,0" VerticalAlignment="Top" Height="253" Width="253"/>
+        <Image Name="OppImageL" HorizontalAlignment="Left" Margin="663,0,0,0" VerticalAlignment="Top" Height="419" Width="419"/>
+        <RichTextBox HorizontalAlignment="Left" Height="193" Margin="0,424,0,0" VerticalAlignment="Top" Width="1392" Background="Black" Foreground="White">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>
+
+
+
+
+
+
+
+
+<Window x:Class="Pokpok.wildBattleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pokpok"
+        mc:Ignorable="d"
+        Title="Wild Encounter" Height="1000.154" Width="1400">
+    <Grid>
+        <Grid>
+            <!--#region Columns and Rows-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="20*"/>
+
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.ColumnSpan="25" HorizontalAlignment="Left" Height="969" Grid.RowSpan="17" VerticalAlignment="Top" Width="1392" Source="./resources/forestbackground.jpg"/>
+            <!--#endregion-->
+        </Grid>
+        <GroupBox x:Name="BattleOptionsBox" Header="" HorizontalAlignment="Left" Height="151" Margin="1046,273,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF009700" Foreground="#FFFFBBBB" Background="#FF009700" Grid.Column="1">
+            <Grid>
+                <Button x:Name="FightButton" Content="Fight" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="36"/>
+                <Button x:Name="BagButton" Content="Bag" HorizontalAlignment="Left" Margin="0,62,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="32"></Button>
+                <Button x:Name="PokemonButton" Content="Pokemon" HorizontalAlignment="Left" Margin="148,2,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="32"></Button>
+                <Button Name="RunButton" Content="Run" HorizontalAlignment="Left" Margin="148,62,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="32"></Button>
+            </Grid>
+        </GroupBox>
+        <Image Name="TrainerImage1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Image x:Name="TrainerImage2" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+        <Image x:Name="TrainerImage3" HorizontalAlignment="Left" Margin="264,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+        <Image x:Name="TrainerImage4" HorizontalAlignment="Left" Margin="409,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+        <Image x:Name="TrainerImage5" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Image x:Name="TrainerImage6" HorizontalAlignment="Left" Margin="119,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+        <Image x:Name="TrainerImage7" HorizontalAlignment="Left" Margin="264,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+        <Image x:Name="TrainerImage8" HorizontalAlignment="Left" Margin="409,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+
+        <Image Name="OppImageS" HorizontalAlignment="Left" Margin="1186,0,0,0" VerticalAlignment="Top" Height="170" Width="170" Grid.Column="1"/>
+        <Image Name="OppImageM" HorizontalAlignment="Left" Margin="1103,0,0,0" VerticalAlignment="Top" Height="253" Width="253" Grid.Column="1"/>
+        <Image Name="OppImageL" HorizontalAlignment="Left" Margin="627,0,0,0" VerticalAlignment="Top" Height="419" Width="419" Grid.Column="1"/>
+        <RichTextBox HorizontalAlignment="Left" Height="193" Margin="0,776,0,0" VerticalAlignment="Top" Width="1392" Background="{x:Null}" Foreground="#FF0D8D00">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>

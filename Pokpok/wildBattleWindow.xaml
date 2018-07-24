@@ -1,0 +1,55 @@
+﻿<Window x:Class="Pokpok.wildBattleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pokpok"
+        mc:Ignorable="d"
+        Title="Wild Encounter" Height="864.154" Width="1688">
+    <Grid>
+        <GroupBox x:Name="BattleOptionsBox" Header="" HorizontalAlignment="Left" Height="151" Margin="1370,489,0,0" VerticalAlignment="Top" Width="310" BorderBrush="#FF009700" Foreground="#FFFFBBBB" Background="#FF009700">
+            <Grid>
+                <Button x:Name="FightButton" Content="Fight" HorizontalAlignment="Left" Margin="0,2,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="36"/>
+                <Button x:Name="BagButton" Content="Bag" HorizontalAlignment="Left" Margin="0,62,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="32"></Button>
+                <Button x:Name="PokemonButton" Content="Pokemon" HorizontalAlignment="Left" Margin="148,2,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="32"></Button>
+                <Button Name="RunButton" Content="Run" HorizontalAlignment="Left" Margin="148,62,0,0" VerticalAlignment="Top" Width="150" Height="60" FontFamily="Power Red and Green" FontSize="32"></Button>
+            </Grid>
+        </GroupBox>
+        <Image Name="TrainerImage1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage2" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage3" HorizontalAlignment="Left" Margin="305,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage4" HorizontalAlignment="Left" Margin="450,10,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage5" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage6" HorizontalAlignment="Left" Margin="155,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage7" HorizontalAlignment="Left" Margin="305,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage8" HorizontalAlignment="Left" Margin="450,155,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage9" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage10" HorizontalAlignment="Left" Margin="155,300,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage11" HorizontalAlignment="Left" Margin="305,300,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name="TrainerImage12" HorizontalAlignment="Left" Margin="450,300,0,0" VerticalAlignment="Top" Height="140" Width="140" RenderTransformOrigin="0.5,0.5"/>
+
+        <Image Name="OppImageS1" HorizontalAlignment="Left" Margin="1095,10,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS2" HorizontalAlignment="Left" Margin="1240,10,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS3" HorizontalAlignment="Left" Margin="1385,10,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS4" HorizontalAlignment="Left" Margin="1530,10,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS5" HorizontalAlignment="Left" Margin="1095,155,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS6" HorizontalAlignment="Left" Margin="1240,155,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS7" HorizontalAlignment="Left" Margin="1385,155,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS8" HorizontalAlignment="Left" Margin="1530,155,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS9" HorizontalAlignment="Left" Margin="1095,300,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS10" HorizontalAlignment="Left" Margin="1240,300,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS11" HorizontalAlignment="Left" Margin="1385,300,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageS12" HorizontalAlignment="Left" Margin="1530,300,0,0" VerticalAlignment="Top" Height="140" Width="140"/>
+        <Image Name="OppImageM1" HorizontalAlignment="Left" Margin="1385,10,0,0" VerticalAlignment="Top" Height="290" Width="285"/>
+        <Image Name="OppImageM2" HorizontalAlignment="Left" Margin="1095,10,0,0" VerticalAlignment="Top" Height="290" Width="285"/>
+        <Image Name="OppImageL" HorizontalAlignment="Left" Margin="744,10,0,0" VerticalAlignment="Top" Height="620" Width="620"/>
+        <RichTextBox HorizontalAlignment="Left" Height="193" Margin="0,640,0,0" VerticalAlignment="Top" Width="1680" Background="Black" Foreground="White">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>
