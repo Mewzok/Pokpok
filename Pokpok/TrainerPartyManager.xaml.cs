@@ -35,5 +35,80 @@ namespace Pokpok
 
             tpmGrid.ShowGridLines = true;
         }
+
+        #region button events
+        private void Add1_Click(object sender, RoutedEventArgs e)
+        {
+            RowDefinition row2 = new RowDefinition();
+
+            row2.Height = new GridLength(70);
+
+            tpmGrid.Height = tpmGrid.Height + 70;
+
+            tpmGrid.RowDefinitions.Remove(CCRow);
+            tpmGrid.RowDefinitions.Add(row2);
+            tpmGrid.RowDefinitions.Add(CCRow);
+            Add2.Visibility = Visibility.Visible;
+            tpmConfirmButton.SetValue(Grid.RowProperty, 2);
+            tpmCancelButton.SetValue(Grid.RowProperty, 2);
+        }
+
+        private void Add2_Click(object sender, RoutedEventArgs e)
+        {
+        //    Add3.Visibility = Visibility.Visible;
+        }
+
+        //private void Add3_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Add4.Visibility = Visibility.Visible;
+        //}
+
+        //private void Add4_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Add5.Visibility = Visibility.Visible;
+        //}
+
+        //private void Add5_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Add6.Visibility = Visibility.Visible;
+        //}
+
+        //private void Add6_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Add7.Visibility = Visibility.Visible;
+        //}
+        #endregion
     }
 }
+
+
+/*
+                 <Button Name="Add2" Content="Add" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add2_Click"/>
+                <Button Name="Add3" Content="Add" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add3_Click"/>
+                <Button Name="Add4" Content="Add" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add4_Click"/>
+                <Button Name="Add5" Content="Add" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add5_Click"/>
+                <Button Name="Add6" Content="Add" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add6_Click"/>
+                <Button Name="Add7" Content="Add" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add8" Content="Add" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add9" Content="Add" HorizontalAlignment="Left" Grid.Row="8" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add10" Content="Add" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add11" Content="Add" HorizontalAlignment="Left" Grid.Row="10" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add12" Content="Add" HorizontalAlignment="Left" Grid.Row="11" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+
+    Height="837"
+
+                        <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="173*"/>
+*/

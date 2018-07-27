@@ -5,30 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pokpok"
         mc:Ignorable="d"
-        Title="Trainer Party Manager" Name="tpManagerWindow" Height="450" Width="800">
+        Title="Trainer Party Manager" Name="tpManagerWindow" Height="450" Width="800" SizeToContent="Height">
     <Grid>
-        <ScrollViewer HorizontalAlignment="Left" Height="419" Margin="776,0,0,0" VerticalAlignment="Top" Width="16"/>
-        <Grid Name="tpmGrid" Margin="0,0,0,-418">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="25*"/>
-                <ColumnDefinition Width="173*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-                <RowDefinition Height="60*"/>
-            </Grid.RowDefinitions>
-            <Button Content="Add Trainer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="18"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid Name="tpmGrid" Height="108" Width="792" VerticalAlignment="Top" ScrollViewer.CanContentScroll="True">
+                <Grid.ColumnDefinitions>
 
-        </Grid>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Name="CCRow" Height="25"/>
+                </Grid.RowDefinitions>
+                <Button Name="Add1" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Click="Add1_Click"/>
+                <Button Name="tpmConfirmButton" Content="Confirm" Margin="206,0,396,-11" Height="37" FontFamily="Power Red and Green" FontSize="24" Grid.Row="1"/>
+                <Button Name="tpmCancelButton" Content="Cancel" Margin="396,0,206,-11" Height="37" FontFamily="Power Red and Green" FontSize="24" Grid.Row="1"/>
+
+                <Button Name="Add2" Content="Add" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add2_Click"/>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

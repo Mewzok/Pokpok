@@ -139,3 +139,57 @@ Mostly scrapped stuff
 
     </Grid>
 </Window>
+
+
+
+
+
+
+// Trainer Manager Window
+
+
+<Window x:Class="Pokpok.TrainerPartyManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pokpok"
+        mc:Ignorable="d"
+        Title="Trainer Party Manager" Name="tpManagerWindow" Height="450" Width="800">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid Name="tpmGrid" Height="837" ScrollViewer.CanContentScroll="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="173*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                </Grid.RowDefinitions>
+                <Button Name="Add1" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Click="Add1_Click"/>
+                <Button Name="Add2" Content="Add" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add2_Click"/>
+                <Button Name="Add3" Content="Add" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add3_Click"/>
+                <Button Name="Add4" Content="Add" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add4_Click"/>
+                <Button Name="Add5" Content="Add" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add5_Click"/>
+                <Button Name="Add6" Content="Add" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add6_Click"/>
+                <Button Name="Add7" Content="Add" HorizontalAlignment="Left" Grid.Row="6" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add8" Content="Add" HorizontalAlignment="Left" Grid.Row="7" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add9" Content="Add" HorizontalAlignment="Left" Grid.Row="8" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add10" Content="Add" HorizontalAlignment="Left" Grid.Row="9" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add11" Content="Add" HorizontalAlignment="Left" Grid.Row="10" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+                <Button Name="Add12" Content="Add" HorizontalAlignment="Left" Grid.Row="11" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>
