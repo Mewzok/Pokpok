@@ -82,5 +82,11 @@ namespace Pokpok
             trainercreator trainerCreatorWin = new trainercreator();
             trainerCreatorWin.Show();
         }
+
+        private void cSetChangePartyButton_Click(object sender, RoutedEventArgs e)
+        {
+            TrainerPartyManager trainerPartyManWin = new TrainerPartyManager();
+            trainerPartyManWin.Show();
+        }
     }
 }

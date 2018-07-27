@@ -78,10 +78,6 @@ namespace Pokpok
                 }
                 else { }
             }
-            
-
-
-
         }
     }
 }

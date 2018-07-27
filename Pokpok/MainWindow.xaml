@@ -25,7 +25,7 @@
                     <Button x:Name="cTrainButton" Content="Create Trainer" Margin="10,177,610,177" FontFamily="Power Red and Green" FontSize="24" Click="cTrainButton_Click"/>
                     <Button x:Name="cModifyButton" Content="Modify Trainer" Margin="181,177,439,177" FontFamily="Power Red and Green" FontSize="24"/>
                     <Button x:Name="cDeleteButton" Content="Delete Trainer" Margin="352,177,268,177" FontFamily="Power Red and Green" FontSize="24"/>
-                    <Button x:Name="cSetChangePartyButton" Content="Set/Change Trainer Party" Margin="10,230,10,124" FontFamily="Power Red and Green" FontSize="24"/>
+                    <Button x:Name="cSetChangePartyButton" Content="Set/Change Trainer Party" Margin="10,230,10,124" FontFamily="Power Red and Green" FontSize="24" Click="cSetChangePartyButton_Click"/>
                     <Button x:Name="cViewPartyButton" Content="View Trainer Party" Margin="10,283,10,71" FontFamily="Power Red and Green" FontSize="24"/>
                 </Grid>
             </TabItem>
