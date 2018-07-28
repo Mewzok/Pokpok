@@ -19,10 +19,14 @@ namespace Pokpok
     /// </summary>
     public partial class TrainerPartyManager : Window
     {
+        public int rowCounter = 3;
+        public List<Button> rowButtonList = new List<Button>();
+
         public TrainerPartyManager()
         {
             InitializeComponent();
             ChangeGridLineColors();
+            AddButtonsToList();
         }
 
         private void ChangeGridLineColors()
@@ -36,21 +40,19 @@ namespace Pokpok
             tpmGrid.ShowGridLines = true;
         }
 
+        private void AddButtonsToList()
+        {
+            foreach (Button b in tpmGrid.Children)
+            {
+                rowButtonList.Add(b);
+            }
+        }
+
         #region button events
         private void Add1_Click(object sender, RoutedEventArgs e)
         {
-            RowDefinition row2 = new RowDefinition();
-
-            row2.Height = new GridLength(70);
-
-            tpmGrid.Height = tpmGrid.Height + 70;
-
-            tpmGrid.RowDefinitions.Remove(CCRow);
-            tpmGrid.RowDefinitions.Add(row2);
-            tpmGrid.RowDefinitions.Add(CCRow);
-            Add2.Visibility = Visibility.Visible;
-            tpmConfirmButton.SetValue(Grid.RowProperty, 2);
-            tpmCancelButton.SetValue(Grid.RowProperty, 2);
+            // Make this a method
+            addRow();
         }
 
         private void Add2_Click(object sender, RoutedEventArgs e)
@@ -77,7 +79,32 @@ namespace Pokpok
         //{
         //    Add7.Visibility = Visibility.Visible;
         //}
+
+
+        private void addRow()
+        {
+            RowDefinition newRow = new RowDefinition();
+
+            newRow.Height = new GridLength(70);
+
+            tpmGrid.Height = tpmGrid.Height + 70;
+
+            tpmGrid.RowDefinitions.Remove(CCRow);
+            tpmGrid.RowDefinitions.Add(newRow);
+            tpmGrid.RowDefinitions.Add(CCRow);
+            rowButtonList[rowCounter].Visibility = Visibility.Visible;
+            tpmConfirmButton.SetValue(Grid.RowProperty, 2);
+            tpmCancelButton.SetValue(Grid.RowProperty, 2);
+
+            rowCounter++;
+        }
         #endregion
+
+        private void loadTrainer()
+        {
+
+        }
+
     }
 }
 

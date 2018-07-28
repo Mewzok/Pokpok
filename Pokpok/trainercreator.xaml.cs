@@ -38,5 +38,16 @@ namespace Pokpok
 
             t1.createTrainer(name, tClass);
         }
+
+        public void setTNameBox(string s)
+        {
+            tNameBox.Text = "Please?";
+            tNameBox.
+        }
+
+        public string getTNameBox()
+        {
+            return tNameBox.Text;
+        }
     }
 }

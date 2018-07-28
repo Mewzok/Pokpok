@@ -193,3 +193,37 @@ Mostly scrapped stuff
         </ScrollViewer>
     </Grid>
 </Window>
+
+
+
+
+Higher Catch Rate for Professor
+Ace Trainer 
+Psychic - Gets bonus from using those types
+Martial Artist - ^^
+
+Classes
+
+					Trainer
+					Junior Trainer
+					Senior Trainer
+	   Ace Trainer   Veteran  Pokemon Trainer  Myth Trainer
+
+
+					Breeder
+			    Nurse     Doctor
+
+
+					Researcher
+			   Professor   Scientist   Ruin Maniac
+
+					Hiker
+			Backpacker  
+
+					Tamer
+			Martial Artist             Psychic                Camper                                  Swimmer                                  Kindler                          Bird Keeper
+		Bodybuilder  Blackbelt       Medium  Sage     Bug Maniac  Bug Catcher  Ranger          Sailor  Diver  Fisherman                Dragon Tamer  Firebreather          Sky Trainer   Pilot
+
+
+					Criminal
+				Thug  Rocket  Aqua   Magma  Skull  Galactic  Flare   Plasma  Snagem  Cipher

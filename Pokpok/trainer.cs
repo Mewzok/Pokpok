@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Pokpok
 {
-    class trainer
+    public class trainer
     {
         string name = "";
         string tClass = "";
@@ -53,11 +53,16 @@ namespace Pokpok
         // Save trainer info
         private void Save(trainer t)
         {
+            trainercreator tc = new trainercreator();
             DirectoryInfo dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + "\\trainersaves");
             FileInfo file = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "\\trainersaves\\" + t.name + ".xml");
 
             System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(t.GetType());
 
+            if(!Directory.Exists(dir.ToString()))
+            {
+                Directory.CreateDirectory(dir.ToString());
+            }
             if (!File.Exists(file.ToString()))
             {
                 // Serialize
@@ -65,6 +70,12 @@ namespace Pokpok
                 {
                     x.Serialize(tw, t);
                 }
+
+                tc.setTNameBox("why");
+                MessageBox.Show(tc.getTNameBox());
+
+                MessageBox.Show("Trainer created successfully.");
+
             } else
             {
                 var result = MessageBox.Show(t.name + " already exists. Are you sure you want to overwrite this save?", "Warning", MessageBoxButton.YesNo);
@@ -76,7 +87,12 @@ namespace Pokpok
                         x.Serialize(tw, t);
                     }
                 }
-                else { }
+                else
+                {
+
+                }
+
+                MessageBox.Show("Trainer created successfully.");
             }
         }
     }
