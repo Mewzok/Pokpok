@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Pokpok
 {
@@ -79,14 +70,34 @@ namespace Pokpok
 
         private void cTrainButton_Click(object sender, RoutedEventArgs e)
         {
+            Thread newWindowThread = new Thread(new ThreadStart(cTrainButton_Action));
+            newWindowThread.SetApartmentState(ApartmentState.STA);
+            newWindowThread.IsBackground = true;
+            newWindowThread.Start();
+        }
+
+        private void cTrainButton_Action()
+        {
             trainercreator trainerCreatorWin = new trainercreator();
             trainerCreatorWin.Show();
+            System.Windows.Threading.Dispatcher.Run();
         }
 
         private void cSetChangePartyButton_Click(object sender, RoutedEventArgs e)
         {
             TrainerPartyManager trainerPartyManWin = new TrainerPartyManager();
             trainerPartyManWin.Show();
+
+            //Thread newWindowThread = new Thread(new ThreadStart(cSetChangeParty_Action));
+            //newWindowThread.SetApartmentState(ApartmentState.STA);
+            //newWindowThread.IsBackground = true;
+            //newWindowThread.Start();
         }
+
+        //private void cSetChangeParty_Action()
+        //{
+
+        //    System.Windows.Threading.Dispatcher.Run();
+        //}
     }
 }

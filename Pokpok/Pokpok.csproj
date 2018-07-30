@@ -56,6 +56,9 @@
     </ApplicationDefinition>
     <Compile Include="Abilites.cs" />
     <Compile Include="badges.cs" />
+    <Compile Include="SelectTrainerTCWin.xaml.cs">
+      <DependentUpon>SelectTrainerTCWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="trainer.cs" />
     <Compile Include="Pokemon.cs" />
     <Compile Include="trainercreator.xaml.cs">
@@ -80,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SelectTrainerTCWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="trainercreator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,8 +127,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="resources\" />
+    <Resource Include="resources\qblock.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

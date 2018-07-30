@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Pokpok
 {
@@ -31,23 +22,18 @@ namespace Pokpok
 
         private void tcSubButton_Click(object sender, RoutedEventArgs e)
         {
-            string name = tNameBox.Text;
-            string tClass = tClassBox.SelectedItem.ToString();
+            string name = new TextRange(tNameBox.Document.ContentStart, tNameBox.Document.ContentEnd).Text.Trim();
+            string tClass = tClassBox.SelectionBoxItem.ToString();
 
             trainer t1 = new trainer();
 
-            t1.createTrainer(name, tClass);
-        }
-
-        public void setTNameBox(string s)
-        {
-            tNameBox.Text = "Please?";
-            tNameBox.
+            t1.createTrainer(t1, name, tClass);
+            tNameBox.Document.Blocks.Clear();
         }
 
         public string getTNameBox()
         {
-            return tNameBox.Text;
+            return new TextRange(tNameBox.Document.ContentStart, tNameBox.Document.ContentEnd).Text;
         }
     }
 }

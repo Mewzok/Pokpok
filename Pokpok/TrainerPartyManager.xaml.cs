@@ -51,7 +51,6 @@ namespace Pokpok
         #region button events
         private void Add1_Click(object sender, RoutedEventArgs e)
         {
-            // Make this a method
             addRow();
         }
 
@@ -83,7 +82,10 @@ namespace Pokpok
 
         private void addRow()
         {
+            SelectTrainerTCWin selTra = new SelectTrainerTCWin();
             RowDefinition newRow = new RowDefinition();
+
+            selTra.Show();
 
             newRow.Height = new GridLength(70);
 

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pokpok
 {
-    enum kantoBadges
+    public enum kantoBadges
     {
         BoulderBadge, CascadeBadge, ThunderBadge, RainbowBadge, SoulBadge, MarshBadge, VolcanoBadge, EarthBadge
-    }
+    };
 
     enum johtoBadges
     {
@@ -35,4 +35,22 @@ namespace Pokpok
     {
         BugBadge, CliffBadge, RumbleBadge, PlantBadge, VoltageBadge, FairyBadge, PsychicBadge, IcebergBadge
     }
+
+    public class NumOfBadges
+    {
+        int numOfBadges;
+        public void setNumOfBadges(trainer t)
+        {
+            numOfBadges = t.KBadges.Capacity + t.JBadges.Capacity + t.HBadges.Capacity + t.SBadges.Capacity + t.UBadges.Capacity + t.KLBadges.Capacity;
+        }
+
+        public int getNumOfBadges()
+        {
+            return numOfBadges; 
+        }
+
+
+    }
 }
+
+
