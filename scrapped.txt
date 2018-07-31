@@ -257,14 +257,14 @@ Classes
                 <Label Content="ClassClassClassClas" FontFamily="Power Red and Green" FontSize="24" Margin="0,30,574,0"/>
                 <Label Content="$" FontFamily="Power Red and Green" FontSize="24" Margin="218,0,539,30"/>
                 <Label Content="0" FontFamily="Power Red and Green" FontSize="24" Margin="234,0,523,30"/>
-                <Label Content="Badges:" FontFamily="Power Red and Green" FontSize="24" Margin="625,0,0,30"/>
-                <Label Content="0" FontFamily="Power Red and Green" FontSize="24" Margin="710,0,0,30"/>
-                <Image Name="P1" Margin="218,30,529,3" Width="35" Height="35"/>
-                <Image Name="P2" Margin="264,30,483,3" Width="35" Height="35"/>
-                <Image Name="P3" Margin="304,30,437,3" Width="35" Height="35"/>
-                <Image Name="P4" Margin="347,30,391,3" Width="35" Height="35"/>
-                <Image Name="P5" Margin="392,30,345,3" Width="35" Height="35"/>
-                <Image Name="P6" Margin="437,30,299,3" Width="35" Height="35"/>
+                <Label Content="Badges:" FontFamily="Power Red and Green" FontSize="24" Margin="650,0,0,30"/>
+                <Label Content="0" FontFamily="Power Red and Green" FontSize="24" Margin="730,0,0,30"/>
+        <Image Name="P1" Margin="218,30,525,3" Width="35" Height="35"/>
+        <Image Name="P2" Margin="264,30,479,3" Width="35" Height="35"/>
+        <Image Name="P3" Margin="310,30,433,3" Width="35" Height="35"/>
+        <Image Name="P4" Margin="356,30,387,3" Width="35" Height="35"/>
+        <Image Name="P5" Margin="402,30,341,3" Width="35" Height="35"/>
+        <Image Name="P6" Margin="448,30,295,3" Width="35" Height="35"/>
 
 
 				        <Grid.RowDefinitions>
@@ -276,3 +276,126 @@ Classes
                 <Label Name="NoTFound" Content="No trainers found" HorizontalAlignment="Center" FontFamily="Power Red and Green" FontSize="36"></Label>
             </Grid>
         </Button>
+
+
+
+
+
+		    <Grid Name="selTraWinGrid" Background="#FFB0B0B0" Height="70">
+        <Grid.RowDefinitions>
+            <RowDefinition Name="row1" Height="70*"/>
+            <RowDefinition Height="0"/>
+        </Grid.RowDefinitions>
+        <Label Name="NoTFound" Content="No trainers found" HorizontalAlignment="Center" FontFamily="Power Red and Green" FontSize="36"></Label>
+
+    </Grid>
+
+
+
+
+
+		            Label l1 = new Label
+            {
+                Content = t.name,
+                FontFamily = new FontFamily("Power Red and Green"),
+                FontSize = 24,
+                Margin = new Thickness(0, 0, 0, 0)
+                // 564 26
+            };
+            Label l2 = new Label
+            {
+                Content = t.tClass,
+                FontFamily = new FontFamily("Power Red and Green"),
+                FontSize = 24,
+                Margin = new Thickness(0, 30, 0, 0)
+            };
+
+            Label l3 = new Label
+            {
+                Content = "$",
+                FontFamily = new FontFamily("Power Red and Green"),
+                FontSize = 24,
+                Margin = new Thickness(218, 0 * j, 539, 30 * j)
+            };
+
+            Label l4 = new Label
+            {
+                Content = t.money,
+                FontFamily = new FontFamily("Power Red and Green"),
+                FontSize = 24,
+                Margin = new Thickness(234, 0 * j, 523, 30 * j)
+            };
+
+            Label l5 = new Label
+            {
+                Content = "Badges:",
+                FontFamily = new FontFamily("Power Red and Green"),
+                FontSize = 24,
+                Width = 157,
+                Height = 38,
+                Margin = new Thickness(625, 0 * j, 0, 30 * j)
+            };
+
+            Label l6 = new Label
+            {
+                Content = t.numOfBadges,
+                FontFamily = new FontFamily("Power Red and Green"),
+                FontSize = 24,
+                Margin = new Thickness(710, 0 * j, 0, 30 * j)
+            };
+
+            BitmapImage pokeIcon = new BitmapImage(new Uri("pack://application:,,,/resources/qblock.jpg", UriKind.Absolute));
+
+            Image i1 = new Image
+            {
+                Name = "P1",
+                Margin = new Thickness(218, 30 * j, 529, 3 * j),
+                Width = 35,
+                Height = 35,
+                Source = pokeIcon
+            };
+
+            Image i2 = new Image
+            {
+                Name = "P2",
+                Margin = new Thickness(264, 30 * j, 483, 3 * j),
+                Width = 35,
+                Height = 35,
+                Source = pokeIcon
+            };
+
+            Image i3 = new Image
+            {
+                Name = "P3",
+                Margin = new Thickness(304, 30 * j, 437, 3 * j),
+                Width = 35,
+                Height = 35,
+                Source = pokeIcon
+            };
+
+            Image i4 = new Image
+            {
+                Name = "P4",
+                Margin = new Thickness(347, 30 * j, 391, 3 * j),
+                Width = 35,
+                Height = 35,
+                Source = pokeIcon
+            };
+
+            Image i5 = new Image
+            {
+                Name = "P5",
+                Margin = new Thickness(392, 30 * j, 345, 3 * j),
+                Width = 35,
+                Height = 35,
+                Source = pokeIcon
+            };
+
+            Image i6 = new Image
+            {
+                Name = "P6",
+                Margin = new Thickness(437, 30 * j, 299, 3 * j),
+                Width = 35,
+                Height = 35,
+                Source = pokeIcon
+            };

@@ -15,6 +15,11 @@ namespace Pokpok
     /// </summary>
     public partial class SelectTrainerTCWin : Window
     {
+        int distanceMod = 0;
+        int distanceMod2 = 0;
+        int n = 0;
+        int m = 0;
+
         public SelectTrainerTCWin()
         {
             InitializeComponent();
@@ -30,182 +35,192 @@ namespace Pokpok
 
             string[] filePaths = Directory.GetFiles(dir.ToString(), "*.xml", SearchOption.TopDirectoryOnly);
 
-            List<Button> backButtons = Enumerable.Repeat(default(Button), filePaths.Length).ToList();
-            List<Grid> backGrids = Enumerable.Repeat(default(Grid), filePaths.Length).ToList();
+
+            List<Button> backButtons = new List<Button>();
+            List<Grid> backGrids = new List<Grid>();
+            List<Label> backLabels = new List<Label>();
+            List<Image> backImages = new List<Image>();
 
             foreach (string s in filePaths)
             {
-                createNewRow(t, filePaths, i, backButtons, backGrids);
                 t = t.loadTrainer(filePaths[i]);
+                backButtons.Add(new Button());
+                backGrids.Add(new Grid());
+
+                for (int l = 0; l < 8; l++)
+                {
+                    backLabels.Add(new Label());
+                    backImages.Add(new Image());
+
+                }
+                createNewRow(t, filePaths, i, backButtons, backGrids, backLabels, backImages);
                 i++;
             }
+
+            i = 0;
+            foreach (Button b in backButtons)
+            {
+                int j = i + 1;
+                backButtons[i].Margin = new Thickness(0, distanceMod, 0, 70 * backButtons.Count - distanceMod2 - 70);
+
+                selTraWinGrid.Children.Add(backButtons[i]);
+
+                if (i == 0)
+                {
+                    distanceMod = 70;
+                    distanceMod2 = distanceMod;
+                }
+                else
+                {
+                    distanceMod = 70 * j;
+                    distanceMod2 = distanceMod;
+                }
+
+                i++;
+            }
+            //backButtons[3].Margin = new Thickness(0, 280, 0, )
         }
 
-        private void createNewRow(trainer t, string[] filePaths, int i, List<Button> backButtons, List<Grid> backGrids)
+        private void createNewRow(trainer t, string[] filePaths, int i, List<Button> backButtons, List<Grid> backGrids, List<Label> backLabels, List<Image> backImages)
         {
+            #region Labels
             int j = i + 1;
-            int distanceMod = 0;
-            t = t.loadTrainer(filePaths[i]);
 
-            MessageBox.Show(t.name);
-            Label l1 = new Label();
-            l1.Content = t.name;
-            l1.FontFamily = new FontFamily("Power Red and Green");
-            l1.FontSize = 24;
-            l1.Margin = new Thickness(0, 0 * j, 564, 26 * j);
+            backLabels[n].Content = t.name;
+            backLabels[n].FontFamily = new FontFamily("Power Red and Green");
+            backLabels[n].FontSize = 24;
+            backLabels[n].Margin = new Thickness(0, 0, 0, 0);
+            n++;
 
-            Label l2 = new Label();
-            l2.Content = t.tClass;
-            l2.FontFamily = new FontFamily("Power Red and Green");
-            l2.FontSize = 24;
-            l2.Margin = new Thickness(0, 30 * j, 574, 0 * j);
+            backLabels[n].Content = t.tClass;
+            backLabels[n].FontFamily = new FontFamily("Power Red and Green");
+            backLabels[n].FontSize = 24;
+            backLabels[n].Margin = new Thickness(0, 30, 0, 0);
+            n++;
 
-            Label l3 = new Label();
-            l3.Content = "$";
-            l3.FontFamily = new FontFamily("Power Red and Green");
-            l3.FontSize = 24;
-            l3.Margin = new Thickness(218, 0 * j, 539, 30 * j);
+            backLabels[n].Content = "$";
+            backLabels[n].FontFamily = new FontFamily("Power Red and Green");
+            backLabels[n].FontSize = 24;
+            backLabels[n].Margin = new Thickness(218, 0, 539, 30);
+            n++;
 
-            Label l4 = new Label();
-            l4.Content = t.money;
-            l4.FontFamily = new FontFamily("Power Red and Green");
-            l4.FontSize = 24;
-            l4.Margin = new Thickness(234, 0 * j, 523, 30 * j);
+            backLabels[n].Content = t.money;
+            backLabels[n].FontFamily = new FontFamily("Power Red and Green");
+            backLabels[n].FontSize = 24;
+            backLabels[n].Margin = new Thickness(234, 0, 400, 30);
+            backLabels[n].Width = 200;
+            n++;
 
-            Label l5 = new Label();
-            l5.Content = "Badges:";
-            l5.FontFamily = new FontFamily("Power Red and Green");
-            l5.FontSize = 24;
-            l5.Width = 157;
-            l5.Height = 38;
-            l5.Margin = new Thickness(625, 0 * j, 0, 30 * j);
+            backLabels[n].Content = "Seen:";
+            backLabels[n].FontFamily = new FontFamily("Power Red and Green");
+            backLabels[n].FontSize = 24;
+            backLabels[n].Margin = new Thickness(530, 0, 0, 30);
+            n++;
 
-            Label l6 = new Label
-            {
-                Content = t.numOfBadges,
-                FontFamily = new FontFamily("Power Red and Green"),
-                FontSize = 24,
-                Margin = new Thickness(710, 0 * j, 0, 30 * j)
-            };
+            backLabels[n].Content = t.seen;
+            backLabels[n].FontFamily = new FontFamily("Power Red and Green");
+            backLabels[n].FontSize = 24;
+            backLabels[n].Margin = new Thickness(585, 0, 0, 30);
+            n++;
 
+            backLabels[n].Content = "Badges:";
+            backLabels[n].FontFamily = new FontFamily("Power Red and Green");
+            backLabels[n].FontSize = 24;
+            backLabels[n].Width = 157;
+            backLabels[n].Height = 38;
+            backLabels[n].Margin = new Thickness(650, 0, 0, 30);
+            n++;
+
+            backLabels[n].Content = t.numOfBadges;
+            backLabels[n].FontFamily = new FontFamily("Power Red and Green");
+            backLabels[n].FontSize = 24;
+            backLabels[n].Margin = new Thickness(730, 0, 0, 30);
+            n++;
+            #endregion
+
+            #region Images
             BitmapImage pokeIcon = new BitmapImage(new Uri("pack://application:,,,/resources/qblock.jpg", UriKind.Absolute));
 
-            Image i1 = new Image
-            {
-                Name = "P1",
-                Margin = new Thickness(218, 30 * j, 529, 3 * j),
-                Width = 35,
-                Height = 35,
-                Source = pokeIcon
-            };
+            backImages[m].Name = "P1";
+            backImages[m].Margin = new Thickness(218, 30, 525, 3);
+            backImages[m].Width = 35;
+            backImages[m].Height = 35;
+            backImages[m].Source = pokeIcon;
+            m++;
 
-            Image i2 = new Image
-            {
-                Name = "P2",
-                Margin = new Thickness(264, 30 * j, 483, 3 * j),
-                Width = 35,
-                Height = 35,
-                Source = pokeIcon
-            };
+            backImages[m].Name = "P2";
+            backImages[m].Margin = new Thickness(264, 30, 479, 3);
+            backImages[m].Width = 35;
+            backImages[m].Height = 35;
+            backImages[m].Source = pokeIcon;
+            m++;
 
-            Image i3 = new Image
-            {
-                Name = "P3",
-                Margin = new Thickness(304, 30 * j, 437, 3 * j),
-                Width = 35,
-                Height = 35,
-                Source = pokeIcon
-            };
+            backImages[m].Name = "P3";
+            backImages[m].Margin = new Thickness(310, 30, 433, 3);
+            backImages[m].Width = 35;
+            backImages[m].Height = 35;
+            backImages[m].Source = pokeIcon;
+            m++;
 
-            Image i4 = new Image
-            {
-                Name = "P4",
-                Margin = new Thickness(347, 30 * j, 391, 3 * j),
-                Width = 35,
-                Height = 35,
-                Source = pokeIcon
-            };
+            backImages[m].Name = "P4";
+            backImages[m].Margin = new Thickness(356, 30, 387, 3);
+            backImages[m].Width = 35;
+            backImages[m].Height = 35;
+            backImages[m].Source = pokeIcon;
+            m++;
 
-            Image i5 = new Image
-            {
-                Name = "P5",
-                Margin = new Thickness(392, 30 * j, 345, 3 * j),
-                Width = 35,
-                Height = 35,
-                Source = pokeIcon
-            };
+            backImages[m].Name = "P5";
+            backImages[m].Margin = new Thickness(402, 30, 341, 3);
+            backImages[m].Width = 35;
+            backImages[m].Height = 35;
+            backImages[m].Source = pokeIcon;
+            m++;
 
-            Image i6 = new Image
-            {
-                Name = "P6",
-                Margin = new Thickness(437, 30 * j, 299, 3 * j),
-                Width = 35,
-                Height = 35,
-                Source = pokeIcon
-            };
+            backImages[m].Name = "P6";
+            backImages[m].Margin = new Thickness(448, 30, 295, 3);
+            backImages[m].Width = 35;
+            backImages[m].Height = 35;
+            backImages[m].Source = pokeIcon;
+            m++;
+            #endregion
 
             if (i == 0)
             {
                 selTraWinGrid.Children.Remove(NoTFound);
             }
 
-            selectTrainerWin.Height = selectTrainerWin.Height + 70;
-            selTraWinGrid.Height += 70;
-
-            //backButtons.Add(new Button());
-            //backGrids.Add(new Grid());
-
-            MessageBox.Show(backButtons.Capacity.ToString());
-            MessageBox.Show(i.ToString());
-            MessageBox.Show(backButtons[i].ToString());
+            if (i >= 1)
+            {
+                selectTrainerWin.Height = selectTrainerWin.Height + 70;
+                selTraWinGrid.Height += 70;
+            }
 
             backButtons[i].Width = 784;
             backButtons[i].Height = 70;
-            backButtons[i].Margin = new Thickness(0, 0, 0, distanceMod);
 
-            if (i == 0)
-                distanceMod = 70;
+            backButtons[i].Background = Brushes.SlateGray;
 
             backButtons[i].Content = backGrids[i];
 
-            backGrids[i].Children.Add(l1);
-            backGrids[i].Children.Add(l2);
-            backGrids[i].Children.Add(l3);
-            backGrids[i].Children.Add(l4);
-            backGrids[i].Children.Add(l5);
-            backGrids[i].Children.Add(l6);
-            backGrids[i].Children.Add(i1);
-            backGrids[i].Children.Add(i2);
-            backGrids[i].Children.Add(i3);
-            backGrids[i].Children.Add(i4);
-            backGrids[i].Children.Add(i5);
-            backGrids[i].Children.Add(i6);
+            // Reset counters for looping to add them to the grids
+            n -= 8;
+            m -= 6;
+
+            // Loop through every label, adding them to the grid
+            while (n < 8 * j)
+            {
+                backGrids[i].Children.Add(backLabels[n]);
+                n++;
+            }
+
+            // Loop through every image, adding them to the grid
+            while (m < 6 * j)
+            {
+                backGrids[i].Children.Add(backImages[m]);
+                m++;
+            }
 
             backGrids[i].UpdateLayout();
-
-
-
-
-            //selTraGrid.Children.Add(l1);
-            //selTraGrid.Children.Add(l2);
-            //selTraGrid.Children.Add(l3);
-            //selTraGrid.Children.Add(l4);
-            //selTraGrid.Children.Add(l5);
-            //selTraGrid.Children.Add(l6);
-            //selTraGrid.Children.Add(i1);
-            //selTraGrid.Children.Add(i2);
-            //selTraGrid.Children.Add(i3);
-            //selTraGrid.Children.Add(i4);
-            //selTraGrid.Children.Add(i5);
-            //selTraGrid.Children.Add(i6);
-
-            //selTraGrid.UpdateLayout();
-
-            //selTraGrid.RowDefinitions.Add(newRow);
-
-
-
-
         }
     }
 }

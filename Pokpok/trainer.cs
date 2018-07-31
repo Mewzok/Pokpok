@@ -15,6 +15,8 @@ namespace Pokpok
         public string tClass { set; get; }
         public int money { set; get; }
         public int numOfBadges { set; get; }
+        public int seen { set; get; }
+        public int caught { set; get; }
         public List<kantoBadges> KBadges { get; set; } = new List<kantoBadges>();
         public List<kantoBadges> JBadges { get; set; } = new List<kantoBadges>();
         public List<kantoBadges> HBadges { get; set; } = new List<kantoBadges>();
@@ -39,6 +41,9 @@ namespace Pokpok
             t.numOfBadges = b.getNumOfBadges();
             t.curParty = "";
             t.inBox = "";
+            t.seen = 0;
+            t.caught = 0;
+            
 
             // serialize new trainer's info
             Save(t);
