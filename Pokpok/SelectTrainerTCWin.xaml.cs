@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Threading;
 
 namespace Pokpok
 {
@@ -15,37 +12,51 @@ namespace Pokpok
     /// </summary>
     public partial class SelectTrainerTCWin : Window
     {
+        TrainerInit ti = new TrainerInit();
         int distanceMod = 0;
         int distanceMod2 = 0;
         int n = 0;
         int m = 0;
 
+        List<trainer> pTrainers = new List<trainer>();
+        List<trainer> aTrainers = new List<trainer>();
+
         public SelectTrainerTCWin()
         {
-            InitializeComponent();
-            Application.Current.MainWindow.FontFamily = new FontFamily("Power Red and Green");
-            showAvailableTrainers();
+            MessageBox.Show("After Show Available Trainers: " + ti.passiveTrainers.Count.ToString());
+            //InitializeComponent();
+            //Application.Current.MainWindow.FontFamily = new FontFamily("Power Red and Green");
+            //showAvailableTrainers();
         }
 
         private void showAvailableTrainers()
         {
+            pTrainers = ti.passiveTrainers;
+            aTrainers = ti.activeTrainers;
+
+            //MessageBox.Show(ti.passiveTrainers.Count.ToString());
+            //MessageBox.Show(pTrainers[0].name);
+
             trainer t = new trainer();
             int i = 0;
-            DirectoryInfo dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + "\\trainersaves");
-
-            string[] filePaths = Directory.GetFiles(dir.ToString(), "*.xml", SearchOption.TopDirectoryOnly);
 
 
             List<Button> backButtons = new List<Button>();
             List<Grid> backGrids = new List<Grid>();
             List<Label> backLabels = new List<Label>();
-            List<Image> backImages = new List<Image>();
+            List<Image> backImages = new List<Image>(); ;
 
-            foreach (string s in filePaths)
+            i = 0;
+            foreach (trainer tr in pTrainers)
             {
-                t = t.loadTrainer(filePaths[i]);
+                t = tr;
                 backButtons.Add(new Button());
+                backButtons[i].Name = "btn" + i.ToString();
                 backGrids.Add(new Grid());
+
+                // Allow events to happen when buttons are clicked
+                backButtons[i].Click += new RoutedEventHandler(button_Click);
+
 
                 for (int l = 0; l < 8; l++)
                 {
@@ -53,13 +64,15 @@ namespace Pokpok
                     backImages.Add(new Image());
 
                 }
-                createNewRow(t, filePaths, i, backButtons, backGrids, backLabels, backImages);
+                createNewRow(t, i, backButtons, backGrids, backLabels, backImages);
                 i++;
             }
 
             i = 0;
             foreach (Button b in backButtons)
             {
+
+                // Add buttons to window
                 int j = i + 1;
                 backButtons[i].Margin = new Thickness(0, distanceMod, 0, 70 * backButtons.Count - distanceMod2 - 70);
 
@@ -81,7 +94,7 @@ namespace Pokpok
             //backButtons[3].Margin = new Thickness(0, 280, 0, )
         }
 
-        private void createNewRow(trainer t, string[] filePaths, int i, List<Button> backButtons, List<Grid> backGrids, List<Label> backLabels, List<Image> backImages)
+        private void createNewRow(trainer t, int i, List<Button> backButtons, List<Grid> backGrids, List<Label> backLabels, List<Image> backImages)
         {
             #region Labels
             int j = i + 1;
@@ -221,6 +234,37 @@ namespace Pokpok
             }
 
             backGrids[i].UpdateLayout();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            int t;
+            Button button = sender as Button;
+            TrainerInit a = new TrainerInit();
+
+            string numString = button.Name.ToString();
+
+            numString = numString.Remove(0, 3);
+
+            t = Convert.ToInt32(numString);
+
+            var result = MessageBox.Show("Add " + pTrainers[t].name + " to current trainer party?", "Warning", MessageBoxButton.YesNo);
+
+
+            if (result == MessageBoxResult.Yes)
+            {
+                aTrainers.Add(pTrainers[t]);
+
+                pTrainers.RemoveAt(t);
+
+                // Send new trainer info back to trainer class
+                a.recieveTrainerData(aTrainers, pTrainers);
+
+                foreach (trainer p in pTrainers)
+                    MessageBox.Show(p.name);
+
+                Close();
+            }
         }
     }
 }

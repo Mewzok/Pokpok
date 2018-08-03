@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -42,6 +39,8 @@ namespace Pokpok
 
         private void AddButtonsToList()
         {
+            TrainerInit ti = new TrainerInit();
+
             foreach (Button b in tpmGrid.Children)
             {
                 rowButtonList.Add(b);
@@ -51,7 +50,21 @@ namespace Pokpok
         #region button events
         private void Add1_Click(object sender, RoutedEventArgs e)
         {
+            TrainerInit ti = new TrainerInit();
+
+            ti.loadPassiveTrainers();
+            MessageBox.Show("ClickButton: " + ti.passiveTrainers.Count.ToString());
+
+            rowCounter = 3;
+
             addRow();
+
+            MessageBox.Show("Add row before window is made: " + ti.passiveTrainers.Count.ToString());
+
+            SelectTrainerTCWin selTra = new SelectTrainerTCWin();
+            selTra.Show();
+
+
         }
 
         private void Add2_Click(object sender, RoutedEventArgs e)
@@ -79,13 +92,17 @@ namespace Pokpok
         //    Add7.Visibility = Visibility.Visible;
         //}
 
+            private void startWin()
+        {
+
+        }
 
         private void addRow()
         {
-            SelectTrainerTCWin selTra = new SelectTrainerTCWin();
-            RowDefinition newRow = new RowDefinition();
 
-            selTra.Show();
+
+
+            RowDefinition newRow = new RowDefinition();
 
             newRow.Height = new GridLength(70);
 

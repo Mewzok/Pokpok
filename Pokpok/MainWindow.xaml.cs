@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using System.Windows;
 using System.Windows.Documents;
@@ -11,9 +13,11 @@ namespace Pokpok
     /// </summary>
     public partial class MainWindow : Window
     {
+        TrainerInit t = new TrainerInit();
         public MainWindow()
         {
             InitializeComponent();
+            //t.loadPassiveTrainers();
         }
 
         private void MainConsole_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -85,13 +89,17 @@ namespace Pokpok
 
         private void cSetChangePartyButton_Click(object sender, RoutedEventArgs e)
         {
+            Thread newWindowThread = new Thread(new ThreadStart(cSetChangePartyButton_Action));
+            newWindowThread.SetApartmentState(ApartmentState.STA);
+            newWindowThread.IsBackground = true;
+            newWindowThread.Start();
+        }
+
+        private void cSetChangePartyButton_Action()
+        {
             TrainerPartyManager trainerPartyManWin = new TrainerPartyManager();
             trainerPartyManWin.Show();
-
-            //Thread newWindowThread = new Thread(new ThreadStart(cSetChangeParty_Action));
-            //newWindowThread.SetApartmentState(ApartmentState.STA);
-            //newWindowThread.IsBackground = true;
-            //newWindowThread.Start();
+            System.Windows.Threading.Dispatcher.Run();
         }
 
         //private void cSetChangeParty_Action()

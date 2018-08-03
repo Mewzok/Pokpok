@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Xml.Serialization;
 
@@ -27,7 +25,6 @@ namespace Pokpok
         public string curParty { set; get; }
 
         public string inBox { set; get; }
-    
 
         public void createTrainer(trainer t, string nm, string tClss)
         {
@@ -43,7 +40,7 @@ namespace Pokpok
             t.inBox = "";
             t.seen = 0;
             t.caught = 0;
-            
+
 
             // serialize new trainer's info
             Save(t);
@@ -75,7 +72,7 @@ namespace Pokpok
 
             XmlSerializer x = new XmlSerializer(t.GetType());
 
-            if(!Directory.Exists(dir.ToString()))
+            if (!Directory.Exists(dir.ToString()))
             {
                 Directory.CreateDirectory(dir.ToString());
             }
@@ -89,7 +86,8 @@ namespace Pokpok
 
                 MessageBox.Show("Trainer created successfully.");
 
-            } else
+            }
+            else
             {
                 var result = MessageBox.Show(t.name + " already exists. Are you sure you want to overwrite this save?", "Warning", MessageBoxButton.YesNo);
 
@@ -107,5 +105,6 @@ namespace Pokpok
                 }
             }
         }
+
     }
 }

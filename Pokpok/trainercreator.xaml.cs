@@ -17,7 +17,7 @@ namespace Pokpok
 
         private void tcCancButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void tcSubButton_Click(object sender, RoutedEventArgs e)

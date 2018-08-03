@@ -64,6 +64,7 @@
     <Compile Include="trainercreator.xaml.cs">
       <DependentUpon>trainercreator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TrainerInit.cs" />
     <Compile Include="Types.cs" />
     <Compile Include="wildBattleWindow.xaml.cs">
       <DependentUpon>wildBattleWindow.xaml</DependentUpon>
