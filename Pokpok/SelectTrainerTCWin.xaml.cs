@@ -23,10 +23,21 @@ namespace Pokpok
 
         public SelectTrainerTCWin()
         {
+
             MessageBox.Show("After Show Available Trainers: " + ti.passiveTrainers.Count.ToString());
-            //InitializeComponent();
+            InitializeComponent();
             //Application.Current.MainWindow.FontFamily = new FontFamily("Power Red and Green");
-            //showAvailableTrainers();
+            showAvailableTrainers();
+        }
+
+        public SelectTrainerTCWin(object tI)
+        {
+            ti = (TrainerInit)tI;
+
+            MessageBox.Show("After Show Available Trainers: " + ti.passiveTrainers.Count.ToString());
+            InitializeComponent();
+            //Application.Current.MainWindow.FontFamily = new FontFamily("Power Red and Green");
+            showAvailableTrainers();
         }
 
         private void showAvailableTrainers()

@@ -13,9 +13,10 @@ namespace Pokpok
     /// </summary>
     public partial class MainWindow : Window
     {
-        TrainerInit t = new TrainerInit();
         public MainWindow()
         {
+            SaveClass sc = new SaveClass();
+
             InitializeComponent();
             //t.loadPassiveTrainers();
         }

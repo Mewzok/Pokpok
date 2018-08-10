@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Pokpok
 {
@@ -18,6 +13,7 @@ namespace Pokpok
     {
         public int rowCounter = 3;
         public List<Button> rowButtonList = new List<Button>();
+        public List<trainer> pTrainers = new List<trainer>();
 
         public TrainerPartyManager()
         {
@@ -39,8 +35,6 @@ namespace Pokpok
 
         private void AddButtonsToList()
         {
-            TrainerInit ti = new TrainerInit();
-
             foreach (Button b in tpmGrid.Children)
             {
                 rowButtonList.Add(b);
@@ -59,9 +53,12 @@ namespace Pokpok
 
             addRow();
 
-            MessageBox.Show("Add row before window is made: " + ti.passiveTrainers.Count.ToString());
+            MessageBox.Show("Add row before window is made 1:  " + ti.passiveTrainers.Count.ToString());
 
-            SelectTrainerTCWin selTra = new SelectTrainerTCWin();
+            SelectTrainerTCWin selTra = new SelectTrainerTCWin(ti);
+
+            //MessageBox.Show("Add row before window is made 2:  " + ti.passiveTrainers.Count.ToString());
+
             selTra.Show();
 
 

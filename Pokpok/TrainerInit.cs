@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Pokpok
 {
@@ -32,6 +29,33 @@ namespace Pokpok
         {
             activeTrainers = aTData;
             passiveTrainers = aPData;
+        }
+
+        //public static MemoryStream DeepSavePTrainers(List<trainer> pTrainer)
+        //{
+        //    using (var ms = new MemoryStream())
+        //    {
+        //        var formatter = new BinaryFormatter();
+        //        formatter.Serialize(ms, pTrainer);
+        //        ms.Position = 0;
+
+        //        return ms;
+        //    }
+        //}
+
+        //public static List<trainer> DeepLoadPTrainers(MemoryStream ms)
+        //{
+        //    List<trainer> t = new List<trainer>();
+        //    var formatter = new BinaryFormatter();
+
+        //    return (List<trainer>) formatter.Deserialize(ms);
+        //}
+
+
+
+        private void loadCurTrainers()
+        {
+            //activeTrainers = aT2;
         }
     }
 }
