@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Threading;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Pokpok
 {
@@ -15,10 +14,7 @@ namespace Pokpok
     {
         public MainWindow()
         {
-            SaveClass sc = new SaveClass();
-
             InitializeComponent();
-            //t.loadPassiveTrainers();
         }
 
         private void MainConsole_PreviewKeyDown(object sender, KeyEventArgs e)

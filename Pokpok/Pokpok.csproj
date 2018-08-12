@@ -54,26 +54,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Abilites.cs" />
-    <Compile Include="badges.cs" />
+    <Compile Include="PokemonInfo\Abilites.cs" />
+    <Compile Include="TrainerInfo\badges.cs" />
     <Compile Include="SaveClass.cs" />
-    <Compile Include="SelectTrainerTCWin.xaml.cs">
+    <Compile Include="Windows\SelectTrainerTCWin.xaml.cs">
       <DependentUpon>SelectTrainerTCWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="trainer.cs" />
-    <Compile Include="Pokemon.cs" />
-    <Compile Include="trainercreator.xaml.cs">
+    <Compile Include="TrainerInfo\trainer.cs" />
+    <Compile Include="PokemonInfo\Pokemon.cs" />
+    <Compile Include="Windows\trainercreator.xaml.cs">
       <DependentUpon>trainercreator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TrainerInit.cs" />
-    <Compile Include="Types.cs" />
-    <Compile Include="wildBattleWindow.xaml.cs">
+    <Compile Include="TrainerInfo\TrainerInit.cs" />
+    <Compile Include="PokemonInfo\Types.cs" />
+    <Compile Include="Windows\wildBattleWindow.xaml.cs">
       <DependentUpon>wildBattleWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TrainerPartyManager.xaml.cs">
+    <Compile Include="Windows\TrainerPartyManager.xaml.cs">
       <DependentUpon>TrainerPartyManager.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -81,29 +81,29 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SelectTrainerTCWin.xaml">
+    <Page Include="Windows\SelectTrainerTCWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="trainercreator.xaml">
+    <Page Include="Windows\trainercreator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="wildBattleWindow.xaml">
+    <Page Include="Windows\wildBattleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TrainerPartyManager.xaml">
+    <Page Include="Windows\TrainerPartyManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pokedef.cs" />
+    <Compile Include="PokemonInfo\Pokedef.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

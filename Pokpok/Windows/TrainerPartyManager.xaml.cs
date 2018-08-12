@@ -47,17 +47,12 @@ namespace Pokpok
             TrainerInit ti = new TrainerInit();
 
             ti.loadPassiveTrainers();
-            MessageBox.Show("ClickButton: " + ti.passiveTrainers.Count.ToString());
 
             rowCounter = 3;
 
             addRow();
 
-            MessageBox.Show("Add row before window is made 1:  " + ti.passiveTrainers.Count.ToString());
-
             SelectTrainerTCWin selTra = new SelectTrainerTCWin(ti);
-
-            //MessageBox.Show("Add row before window is made 2:  " + ti.passiveTrainers.Count.ToString());
 
             selTra.Show();
 

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pokpok"
         mc:Ignorable="d"
-        Title="Pokpok" Height="450" Width="808">
+        Title="Pokpok" Height="450" Width="808" FontFamily="Power Red and Green" FontSize="16">
+
     <Grid>
         <TabControl HorizontalAlignment="Left" Width="792" Margin="0,-1,0,1" Height="430" Background="#FF595959">
             <TabItem Header="Main Screen" Margin="0,-4,0,0" Width="240">

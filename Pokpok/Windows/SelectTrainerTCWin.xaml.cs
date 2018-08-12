@@ -21,32 +21,27 @@ namespace Pokpok
         List<trainer> pTrainers = new List<trainer>();
         List<trainer> aTrainers = new List<trainer>();
 
+        // Instantiate Trainer Select Window
         public SelectTrainerTCWin()
         {
-
-            MessageBox.Show("After Show Available Trainers: " + ti.passiveTrainers.Count.ToString());
             InitializeComponent();
-            //Application.Current.MainWindow.FontFamily = new FontFamily("Power Red and Green");
             showAvailableTrainers();
         }
 
+        // Instantiate Trainer Select Window if a trainer object is needed
         public SelectTrainerTCWin(object tI)
         {
             ti = (TrainerInit)tI;
 
-            MessageBox.Show("After Show Available Trainers: " + ti.passiveTrainers.Count.ToString());
             InitializeComponent();
-            //Application.Current.MainWindow.FontFamily = new FontFamily("Power Red and Green");
             showAvailableTrainers();
         }
 
+        // Shows all currently available trainers saved in trainersaves file. Allows a trainer to be selected to be added to current party.
         private void showAvailableTrainers()
         {
             pTrainers = ti.passiveTrainers;
             aTrainers = ti.activeTrainers;
-
-            //MessageBox.Show(ti.passiveTrainers.Count.ToString());
-            //MessageBox.Show(pTrainers[0].name);
 
             trainer t = new trainer();
             int i = 0;
@@ -105,6 +100,7 @@ namespace Pokpok
             //backButtons[3].Margin = new Thickness(0, 280, 0, )
         }
 
+        // Creates a new row within Trainer Select Window
         private void createNewRow(trainer t, int i, List<Button> backButtons, List<Grid> backGrids, List<Label> backLabels, List<Image> backImages)
         {
             #region Labels
@@ -247,6 +243,7 @@ namespace Pokpok
             backGrids[i].UpdateLayout();
         }
 
+        // Handles a trainer being clicked.
         private void button_Click(object sender, RoutedEventArgs e)
         {
             int t;
