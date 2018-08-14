@@ -15,6 +15,7 @@ namespace Pokpok
         public int numOfBadges { set; get; }
         public int seen { set; get; }
         public int caught { set; get; }
+        public bool active { set; get; }
         public List<kantoBadges> KBadges { get; set; } = new List<kantoBadges>();
         public List<kantoBadges> JBadges { get; set; } = new List<kantoBadges>();
         public List<kantoBadges> HBadges { get; set; } = new List<kantoBadges>();
@@ -40,10 +41,11 @@ namespace Pokpok
             t.inBox = "";
             t.seen = 0;
             t.caught = 0;
+            t.active = false;
 
 
             // serialize new trainer's info
-            Save(t);
+            Save(t, true);
         }
 
         public void modifyTrainer()
@@ -63,8 +65,8 @@ namespace Pokpok
         }
 
 
-        // Save trainer info
-        private void Save(trainer t)
+        // Generic save trainer
+        public void Save(trainer t, bool isNew = false, bool askOverwrite = true)
         {
             trainercreator tc = new trainercreator();
             DirectoryInfo dir = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + "\\trainersaves");
@@ -84,8 +86,18 @@ namespace Pokpok
                     x.Serialize(tw, t);
                 }
 
-                MessageBox.Show("Trainer created successfully.");
+                if (isNew == true)
+                    MessageBox.Show("Trainer created successfully");
+            }
+            else if(askOverwrite == false)
+            {
+                using (TextWriter tw = new StreamWriter(file.ToString()))
+                {
+                    x.Serialize(tw, t);
+                }
 
+                if (isNew == true)
+                    MessageBox.Show("Trainer created successfully");
             }
             else
             {
@@ -97,7 +109,9 @@ namespace Pokpok
                     {
                         x.Serialize(tw, t);
                     }
-                    MessageBox.Show("Trainer created successfully.");
+
+                    if (isNew == true)
+                        MessageBox.Show("Trainer created successfully");
                 }
                 else
                 {

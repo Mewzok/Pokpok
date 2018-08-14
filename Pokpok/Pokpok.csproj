@@ -56,7 +56,6 @@
     </ApplicationDefinition>
     <Compile Include="PokemonInfo\Abilites.cs" />
     <Compile Include="TrainerInfo\badges.cs" />
-    <Compile Include="SaveClass.cs" />
     <Compile Include="Windows\SelectTrainerTCWin.xaml.cs">
       <DependentUpon>SelectTrainerTCWin.xaml</DependentUpon>
     </Compile>

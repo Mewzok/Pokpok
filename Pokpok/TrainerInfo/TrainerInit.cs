@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Windows;
 
 namespace Pokpok
 {
     class TrainerInit
     {
+        public static TrainerInit tI = new TrainerInit();
         public List<trainer> activeTrainers { get; set; } = new List<trainer>();
         public List<trainer> passiveTrainers { get; set; } = new List<trainer>();
 
@@ -19,42 +21,22 @@ namespace Pokpok
             foreach (string s in filePaths)
             {
                 t = t.loadTrainer(filePaths[i]);
-                passiveTrainers.Add(t);
+                if (t.active == false)
+                    passiveTrainers.Add(t);
+                else
+                    activeTrainers.Add(t);
+
                 i++;
             }
         }
 
-        public void recieveTrainerData(List<trainer> aTData, List<trainer> aPData)
+        public static void recieveTrainerData(List<trainer> aTData, List<trainer> aPData)
         {
-            activeTrainers = aTData;
-            passiveTrainers = aPData;
-        }
+            tI.activeTrainers = aTData;
+            tI.passiveTrainers = aPData;
 
-        //public static MemoryStream DeepSavePTrainers(List<trainer> pTrainer)
-        //{
-        //    using (var ms = new MemoryStream())
-        //    {
-        //        var formatter = new BinaryFormatter();
-        //        formatter.Serialize(ms, pTrainer);
-        //        ms.Position = 0;
-
-        //        return ms;
-        //    }
-        //}
-
-        //public static List<trainer> DeepLoadPTrainers(MemoryStream ms)
-        //{
-        //    List<trainer> t = new List<trainer>();
-        //    var formatter = new BinaryFormatter();
-
-        //    return (List<trainer>) formatter.Deserialize(ms);
-        //}
-
-
-
-        private void loadCurTrainers()
-        {
-            //activeTrainers = aT2;
+            foreach (trainer t in tI.activeTrainers)
+                MessageBox.Show("TrainerInit: " + t.name);
         }
     }
 }

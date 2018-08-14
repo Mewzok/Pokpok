@@ -249,6 +249,7 @@ namespace Pokpok
             int t;
             Button button = sender as Button;
             TrainerInit a = new TrainerInit();
+            trainer tr = new trainer();
 
             string numString = button.Name.ToString();
 
@@ -258,15 +259,15 @@ namespace Pokpok
 
             var result = MessageBox.Show("Add " + pTrainers[t].name + " to current trainer party?", "Warning", MessageBoxButton.YesNo);
 
-
             if (result == MessageBoxResult.Yes)
             {
+                pTrainers[t].active = true;
+                tr.Save(pTrainers[t], false, false);
                 aTrainers.Add(pTrainers[t]);
-
                 pTrainers.RemoveAt(t);
 
                 // Send new trainer info back to trainer class
-                a.recieveTrainerData(aTrainers, pTrainers);
+                TrainerInit.recieveTrainerData(aTrainers, pTrainers);
 
                 foreach (trainer p in pTrainers)
                     MessageBox.Show(p.name);
