@@ -247,6 +247,7 @@ namespace Pokpok
         private void button_Click(object sender, RoutedEventArgs e)
         {
             int t;
+            bool confirmed = false;
             Button button = sender as Button;
             TrainerInit a = new TrainerInit();
             trainer tr = new trainer();
@@ -261,18 +262,19 @@ namespace Pokpok
 
             if (result == MessageBoxResult.Yes)
             {
-                pTrainers[t].active = true;
-                tr.Save(pTrainers[t], false, false);
-                aTrainers.Add(pTrainers[t]);
-                pTrainers.RemoveAt(t);
+                //pTrainers[t].active = true;
+                //tr.Save(pTrainers[t], false, false);
+                //aTrainers.Add(pTrainers[t]);
+                //pTrainers.RemoveAt(t);
+
+                confirmed = true;
 
                 // Send new trainer info back to trainer class
                 TrainerInit.recieveTrainerData(aTrainers, pTrainers);
 
-                foreach (trainer p in pTrainers)
-                    MessageBox.Show(p.name);
-
                 Close();
+
+                trainerAdded(confirmed);
             }
         }
     }

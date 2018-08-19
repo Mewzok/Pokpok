@@ -399,3 +399,9 @@ Classes
                 Height = 35,
                 Source = pokeIcon
             };
+
+
+
+                <Button Name="Add1" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Click="Add1_Click"/>
+
+	<Button Name="Add2" Content="Add" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="70" FontFamily="Power Red and Green" FontSize="36" Visibility="Hidden" Click="Add2_Click"/>

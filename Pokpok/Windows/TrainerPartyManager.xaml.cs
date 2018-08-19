@@ -14,12 +14,34 @@ namespace Pokpok
         public int rowCounter = 3;
         public List<Button> rowButtonList = new List<Button>();
         public List<trainer> pTrainers = new List<trainer>();
+        public bool isYes = false;
 
         public TrainerPartyManager()
         {
             InitializeComponent();
             ChangeGridLineColors();
+            addFirstButton();
             AddButtonsToList();
+        }
+
+        private void addFirstButton()
+        {
+            Button b1 = new Button
+            {
+                Height = 70,
+                Width = 100,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                FontFamily = new FontFamily("Power Red and Green"),
+                FontSize = 36,
+                Content = "Add"
+            };
+
+            b1.Click += new RoutedEventHandler(button_Click);
+
+            tpmGrid.Children.Add(b1);
+            Grid.SetRow(b1, 0);
+            Grid.SetColumn(b1, 0);
         }
 
         private void ChangeGridLineColors()
@@ -42,58 +64,48 @@ namespace Pokpok
         }
 
         #region button events
-        private void Add1_Click(object sender, RoutedEventArgs e)
+        //private void Add1_Click(object sender, RoutedEventArgs e)
+        //{
+        //    TrainerInit ti = new TrainerInit();
+
+        //    ti.loadPassiveTrainers();
+
+        //    rowCounter = 3;
+
+        //    addRow();
+
+        //    SelectTrainerTCWin selTra = new SelectTrainerTCWin(ti);
+
+        //    selTra.Show();
+
+
+        //}
+
+        private void button_Click(object sender, RoutedEventArgs e)
         {
             TrainerInit ti = new TrainerInit();
-
             ti.loadPassiveTrainers();
-
-            rowCounter = 3;
-
-            addRow();
 
             SelectTrainerTCWin selTra = new SelectTrainerTCWin(ti);
 
             selTra.Show();
-
-
         }
 
-        private void Add2_Click(object sender, RoutedEventArgs e)
+        private void doIfYes()
         {
-        //    Add3.Visibility = Visibility.Visible;
+            addRow();
         }
 
-        //private void Add3_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Add4.Visibility = Visibility.Visible;
-        //}
-
-        //private void Add4_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Add5.Visibility = Visibility.Visible;
-        //}
-
-        //private void Add5_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Add6.Visibility = Visibility.Visible;
-        //}
-
-        //private void Add6_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Add7.Visibility = Visibility.Visible;
-        //}
-
-            private void startWin()
+        public void trainerAdded(bool conf)
         {
-
+            if(conf == true)
+            {
+                isYwaeduouoaawnokgrf''sef; rlghbmd,
+            }
         }
 
         private void addRow()
         {
-
-
-
             RowDefinition newRow = new RowDefinition();
 
             newRow.Height = new GridLength(70);
@@ -102,8 +114,7 @@ namespace Pokpok
 
             tpmGrid.RowDefinitions.Remove(CCRow);
             tpmGrid.RowDefinitions.Add(newRow);
-            tpmGrid.RowDefinitions.Add(CCRow);
-            rowButtonList[rowCounter].Visibility = Visibility.Visible;
+            //tpmGrid.RowDefinitions.Add(CCRow);
             tpmConfirmButton.SetValue(Grid.RowProperty, 2);
             tpmCancelButton.SetValue(Grid.RowProperty, 2);
 
