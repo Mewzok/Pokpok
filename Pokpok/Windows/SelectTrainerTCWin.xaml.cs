@@ -274,7 +274,7 @@ namespace Pokpok
 
                 Close();
 
-                trainerAdded(confirmed);
+                //trainerAdded(confirmed);
             }
         }
     }

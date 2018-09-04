@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Pokpok.MapInfo;
+using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace Pokpok
 {
@@ -12,9 +13,11 @@ namespace Pokpok
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Map> maps = new List<Map>();
         public MainWindow()
         {
             InitializeComponent();
+            maps = MapUtility.loadAllMaps();
         }
 
         private void MainConsole_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -98,6 +101,15 @@ namespace Pokpok
             trainerPartyManWin.Show();
             System.Windows.Threading.Dispatcher.Run();
         }
+
+
+        #region Maps
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        #endregion
 
         //private void cSetChangeParty_Action()
         //{

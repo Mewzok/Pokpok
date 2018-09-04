@@ -45,7 +45,29 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Map" Margin="0,-4,0,0" Width="240">
+                <Grid>
+                    <Button Content="Kanto" Height="44" Margin="0,0,551,355"/>
+                    <Button Content="Johto" Height="44" Margin="0,49,551,306"/>
+                    <Button Content="Hoenn" Height="44" Margin="0,98,551,257"/>
+                    <Button Content="Sinnoh" Height="44" Margin="0,147,551,208"/>
+                    <Button Content="Unova" Height="44" Margin="0,196,551,159"/>
+                    <Button Content="Kalos" Height="44" Margin="0,245,551,110"/>
+                    <Button Content="Alola" Height="44" Margin="0,294,551,61"/>
+                    <Button Content="No Map..." Height="44" Margin="0,343,551,12" IsEnabled="False"/>
+                    <Button Content="No Map..." Height="44" Margin="245,0,310,355" IsEnabled="False"/>
+                    <Button Content="No Map..." Height="44" Margin="245,49,310,306" IsEnabled="False"/>
+                    <Button Content="No Map..." Height="44" Margin="245,98,310,257" IsEnabled="False"/>
+                    <Button Content="No Map..." Height="44" Margin="245,147,310,208" IsEnabled="False"/>
+                    <Button Content="No Map..." Height="44" Margin="245,196,310,159" IsEnabled="False"/>
+                    <Button Content="No Map..." Height="44" Margin="245,245,310,110" IsEnabled="False"/>
+                    <Button Content="No Map..." Height="44" Margin="245,294,310,61" IsEnabled="False"/>
+                    <Button Content="No Map..." Height="44" Margin="245,343,310,12" IsEnabled="False"/>
+                    <Button Name="LoadMapButton" Content="Load Map" Height="44" Margin="682,245,0,110" Click="Button_Click"/>
+                    <Button Content="New Map..." Height="44" Margin="682,294,0,61"/>
+                    <Button Content="Delete Map..." Height="44" Margin="682,343,-1,12"/>
+                    <Image HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="786"/>
 
+                </Grid>
             </TabItem>
 
         </TabControl>

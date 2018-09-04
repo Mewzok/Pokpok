@@ -100,7 +100,7 @@ namespace Pokpok
         {
             if(conf == true)
             {
-                isYwaeduouoaawnokgrf''sef; rlghbmd,
+                
             }
         }
 
